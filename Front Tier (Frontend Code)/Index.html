@@ -1,0 +1,55 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="button_page_style.css">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+<body class="container" background="bg.jpg">
+<br>    
+<div class="row" style="position: absolute;top: 50%;left:50%;transform: translate(-50%,-50%);">
+	<a class="btn btn-primary btn-lg btn-block disabled" id="SQL" role="button" aria-pressed="true" href="SQL_Questions.html" >SQL Injection</a>
+	<a class="btn btn-primary btn-lg btn-block disabled" id="XSS" role="button" aria-pressed="true" href="XSS_Questions.html">Cross Site Scripting</a>
+	<a class="btn btn-primary btn-lg btn-block disabled" id="CSRF" role="button" aria-pressed="true" href="CSRF_Questions.html">Cross Site Forgery Request</a>
+	<a class="btn btn-primary btn-lg btn-block disabled" id="XEE" role="button" aria-pressed="true" href="XEE_Questions.html">XEE Attack</a>
+	<a class="btn btn-primary btn-lg btn-block disabled" id="BAUTH" role="button" aria-pressed="true" href="BAUTH_Questions.html">Broken Authentication</a>
+</div>
+<script>
+	if(typeof(EventSource) !== "undefined") {
+		var source = new EventSource("https://shielded-reef-36024.herokuapp.com/api/v1/stream");
+		source.onmessage = function(event) {
+			console.log(event);
+		const parsedJson = JSON.parse(event.data);
+		console.log(parsedJson);
+		const uid = parsedJson.uid;
+		const cid = parsedJson.cid;
+
+		if (parsedJson.cid == "SQL"){
+			$('#SQL').removeClass('disabled');
+		}
+		if (parsedJson.cid == "XSS"){
+			$('#XSS').removeClass('disabled');
+		}
+		if (parsedJson.cid == "CSRF"){
+			$('#CSRF').removeClass('disabled');
+		}
+		if (parsedJson.cid == "XEE"){
+			$('#XEE').removeClass('disabled');
+		}
+		if (parsedJson.cid == "BAUTH"){
+			$('#BAUTH').removeClass('disabled');
+		}
+		console.log(uid);
+		console.log(cid);
+		window.localStorage.setItem('uid',uid);
+		window.localStorage.setItem('cid',cid);
+		};
+	} else {
+		console.log("error");
+		}
+</script>
+</body>
+</html>

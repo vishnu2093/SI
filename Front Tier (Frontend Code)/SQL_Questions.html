@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dynamic Quiz Project</title>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans"/>
+		<script type='text/javascript' src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+		<!-- enable disable next-->
+		<script>
+			function enableNext() {
+				$('#next').removeClass('disabled');
+				// document.getElementById("next").disabled = false;
+			}
+			function disableNext() {
+				$('#next').addClass('disabled');
+				// document.getElementById("next").disabled = true;
+			}
+		</script> 
+
+	</head>
+	<body class="container" background="bg.jpg">
+		<div class='page-header'>
+		<font face="Montserrat Black" color="white"> <h1>SQL Quiz</h1> </font>
+		</div>
+		<br/>
+		<div class="radio" id='quiz'></div>
+			<div class="col-xs-5">
+				<a class="btn btn-primary btn-md" id='prev' role="button" aria-pressed="true" href="#"><span class="glyphicon glyphicon-chevron-left"></span> Previous</a>
+				<a class="btn btn-primary btn-md disabled" id='next' role="button" aria-pressed="true" href="#" onclick="disableNext()"><span class="glyphicon glyphicon-chevron-right"></span> Next</a>		
+			</div>
+			<div class="col-xs-5">
+				<a class="btn btn-primary btn-md" id='submit' role="button" aria-pressed="true" href="#" onclick="enableNext()" ><span class="glyphicon glyphicon-save"></span> Submit</a>
+				<a class="btn btn-primary btn-md" id='start' role="button" aria-pressed="true" href="#">Start <span class="glyphicon glyphicon-repeat"></span> Over</a>
+			</div>
+
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+		<script type='text/javascript' src='SQL_Questions_Script.js'></script>
+	</body>
+</html>
+
+
+<!-- added for lock-unlock button functionality onclick="enableNext()"   disabled='true' onclick="disableNext()"-->
