@@ -1,0 +1,8 @@
+{
+    "name": "Find-the-Fix API Documentation",
+    "version": "1.0.0",
+    "description": "FtF API Documentation",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

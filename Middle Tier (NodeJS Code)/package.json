@@ -1,0 +1,25 @@
+{
+  "name": "security-challenge",
+  "version": "1.0.0",
+  "description": "CMD+CTRL NodeJS Middle Tier",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "apidoc -e \"node_modules|static\" -o static/apidocs && nodemon server.js",
+    "exec": "nodemon server.js"
+  },
+  "author": "Team Aurora",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  },
+  "engines": {
+    "node": "10.15.1"
+  }
+}
