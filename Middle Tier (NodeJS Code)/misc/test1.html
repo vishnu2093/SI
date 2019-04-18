@@ -1,0 +1,10 @@
+<script>
+if(typeof(EventSource) !== "undefined") {
+  var source = new EventSource("https://shielded-reef-36024.herokuapp.com/api/v1/stream");
+  source.onmessage = function(event) {
+    console.log(event.data);
+  };
+} else {
+  console.log("error");
+}
+</script>
